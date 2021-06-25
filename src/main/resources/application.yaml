@@ -1,0 +1,37 @@
+azure:
+  app.tenant.id: 966ac572-f5b7-4bbe-aa88-c76419c0f851
+  openid.config.token.endpoint:  https://login.microsoftonline.com/${azure.app.tenant.id}/oauth2/v2.0/token
+
+no.nav.security.jwt:
+  client:
+    registration:
+      bidrag-testdata-cloud:
+        token-endpoint-url: ${azure.openid.config.token.endpoint}
+        grant-type: client_credentials
+        scope: api://a1fd9dc1-2590-4e10-86a1-bc611c96dc17/.default
+        authentication:
+          client-id: ${AZURE_APP_CLIENT_ID}
+          client-jwk: ${AZURE_APP_JWK}
+          client-auth-method: private_key_jwt
+
+server:
+  servlet:
+    context-path: /bidrag-testdata-cloud
+
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BROKERS}
+    properties:
+      security.protocol: SSL
+      ssl:
+        keystore:
+          type: PKCS12
+          location: ${KAFKA_KEYSTORE_PATH}
+          password: ${KAFKA_CREDSTORE_PASSWORD}
+        truststore:
+          location: ${KAFKA_TRUSTSTORE_PATH}
+          password: ${KAFKA_CREDSTORE_PASSWORD}
+        endpoint.identification.algorithm:
+      consumer:
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer

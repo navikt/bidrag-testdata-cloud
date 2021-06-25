@@ -1,0 +1,5 @@
+name: bidrag-testdata-cloud-feature
+kafka-topic-journalpost: bidrag.journalpost-feature
+ingresses:
+  - https://bidrag-dokument-cloud-feature.dev.intern.nav.no/
+
