@@ -1,2 +1,2 @@
 # bidrag-testdata-cloud
-Mikrotjeneste for validering av testdata i offentlig sky
+Mikrotjeneste for validering av data i offentlig sky
