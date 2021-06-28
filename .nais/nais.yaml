@@ -6,6 +6,10 @@ metadata:
   labels:
     team: bidrag
 spec:
+  accessPolicy:
+    inbound:
+      rules:
+        - application: {{ inbound-rules.bidrag-cucumber-cloud }}
   azure:
     application:
       enabled: true

@@ -2,3 +2,5 @@ name: bidrag-testdata-cloud
 kafka-topic-journalpost: bidrag.journalpost
 ingresses:
   - https://bidrag-testdata-cloud.dev.intern.nav.no/
+inbound-rules:
+  bidrag-cucumber-cloud: bidrag-cucumber-cloud
