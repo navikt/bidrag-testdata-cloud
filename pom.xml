@@ -78,6 +78,8 @@
       <version>${token-support.version}</version>
     </dependency>
 
+    <!-- kubernetes -->
+
     <!-- in memory database -->
     <dependency>
       <groupId>com.h2database</groupId>
